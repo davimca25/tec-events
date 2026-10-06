@@ -13,7 +13,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "tb_coupon")
+@Table(name = "coupon")
 @Entity
 public class Coupon {
 

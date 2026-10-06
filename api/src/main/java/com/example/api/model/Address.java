@@ -13,7 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "tb_address")
+@Table(name = "address")
 @Entity
 public class Address {
 

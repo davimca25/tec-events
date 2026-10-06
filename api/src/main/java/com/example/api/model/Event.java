@@ -15,7 +15,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "tb_event")
+@Table(name = "event")
 @Entity
 public class Event {
 
