@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/event")
 public class EventController {
@@ -28,5 +30,11 @@ public class EventController {
         EventRequestDTO eventRequestDTO = new EventRequestDTO(title, description, date, city, state, remote, eventUrl, image);
         Event event = this.eventService.createEvent(eventRequestDTO);
         return ResponseEntity.ok(event);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Event>> getEvents(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = )) {
+
+
     }
 }
