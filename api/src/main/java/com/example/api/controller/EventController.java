@@ -1,6 +1,7 @@
 package com.example.api.controller;
 
 import com.example.api.dto.EventRequestDTO;
+import com.example.api.dto.EventResponseDTO;
 import com.example.api.model.Event;
 import com.example.api.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +34,8 @@ public class EventController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Event>> getEvents(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = )) {
-
-
+    public ResponseEntity<List<EventResponseDTO>> getEvents(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size) {
+        List<EventResponseDTO> eventsResponse = eventService.listEvents(page, size);
+        return ResponseEntity.ok(eventsResponse);
     }
 }
