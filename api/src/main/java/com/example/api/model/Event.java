@@ -33,6 +33,6 @@ public class Event {
     @OneToMany(mappedBy = "event")
     private List<Coupon> coupons = new ArrayList<>();
 
-    @OneToMany(mappedBy = "event")
-    private List<Address> addresses = new ArrayList<>();
+    @OneToOne(mappedBy = "event", cascade = CascadeType.ALL)
+    private Address address;
 }
